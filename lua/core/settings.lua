@@ -57,6 +57,20 @@ opt.synmaxcol = 240                   -- Max column for syntax highlight
 -- Autocommands
 -----------------------------------------------------------
 
+exec([[
+
+  let g:vimtex_compiler_latexmk = {
+      \ 'options' : [
+      \    '-shell-escape',
+      \    '-verbose',
+      \    '-file-line-error',
+      \    '-synctex=1',
+      \    '-interaction=nonstopmode',
+      \ ],
+      \}
+    
+]], false)
+
 -- Set cwd to open buffer
 cmd [[autocmd BufEnter * silent! lcd %:p:h]]
 
