@@ -48,7 +48,7 @@ map('n', '<leader>r', ':NvimTreeRefresh<CR>')       -- refresh
 map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
 
 -- Telescope
-map('n','<C-f>',  ':Telescope <CR>')
+map('n','<C-f>',  ':Telescope current_buffer_fuzzy_find<CR>')
 map('n', '<leader>ff', ':Telescope find_files<CR>')
 map('n', '<leader>fh', ':Telescope oldfiles<CR>')
 map('n', '<leader>fc', ':Telescope colorscheme<CR>')

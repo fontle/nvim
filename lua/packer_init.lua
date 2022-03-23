@@ -39,6 +39,9 @@ return packer.startup(function()
   -- Tag viewer
   use 'simrat39/symbols-outline.nvim'
 
+  -- Indent text object
+  use 'michaeljsmith/vim-indent-object'
+
   -- Treesitter interface
   use 'nvim-treesitter/nvim-treesitter'
 
