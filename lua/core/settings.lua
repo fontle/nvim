@@ -26,7 +26,7 @@ opt.completeopt = 'menuone,noselect'  -- Autocomplete options
 -----------------------------------------------------------
 -- Neovim UI
 -----------------------------------------------------------
-opt.number = true                     -- Show line number
+opt.relativenumber = true                     -- Show line number
 opt.showmatch = true                  -- Highlight matching parenthesis
 opt.foldmethod = 'marker'             -- Enable folding (default 'foldmarker')
 --opt.colorcolumn = '80'             -- Line lenght marker at 80 columns
@@ -36,7 +36,7 @@ opt.ignorecase = true                 -- Ignore case letters when search
 opt.smartcase = true                  -- Ignore lowercase for the whole pattern
 opt.linebreak = true                  -- Wrap on word boundary
 opt.termguicolors = true              -- Enable 24-bit RGB colors
-
+opt.pumheight = 10
 -----------------------------------------------------------
 -- Tabs, indent
 -----------------------------------------------------------
@@ -68,7 +68,7 @@ exec([[
       \    '-interaction=nonstopmode',
       \ ],
       \}
-    
+
 ]], false)
 
 -- Set cwd to open buffer
@@ -96,6 +96,10 @@ cmd [[
   autocmd FileType xml,html,xhtml,css,scss,javascript,lua,yaml setlocal shiftwidth=2 tabstop=2
 ]]
 
+-- Update lazygit telescope dir folder
+cmd [[
+  autocmd BufEnter * :lua require('lazygit.utils').project_root_dir()
+]]
 -----------------------------------------------------------
 -- Terminal
 -----------------------------------------------------------
@@ -118,6 +122,8 @@ cmd [[command FormatJSON :%!python -m json.tool]]
 -----------------------------------------------------------
 -- Startup
 -----------------------------------------------------------
+
+cmd[[colorscheme onedark]]
 
 -- Disable nvim intro
 opt.shortmess:append "sI"

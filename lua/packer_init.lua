@@ -42,6 +42,9 @@ return packer.startup(function()
   -- Indent text object
   use 'michaeljsmith/vim-indent-object'
 
+  -- Change surrounding: '' "" () [] {}
+  use 'tpope/vim-surround'
+
   -- Treesitter interface
   use 'nvim-treesitter/nvim-treesitter'
 
@@ -49,7 +52,7 @@ return packer.startup(function()
   use 'navarasu/onedark.nvim'
   use 'tanvirtin/monokai.nvim'
   use { 'rose-pine/neovim', as = 'rose-pine' }
-
+  use 'folke/tokyonight.nvim'
   -- LSP
   use 'neovim/nvim-lspconfig'
 
@@ -70,13 +73,11 @@ return packer.startup(function()
       'saadparwaiz1/cmp_luasnip',
     },
   }
-
   -- Statusline
   use {
-    'famiu/feline.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
-
   -- git labels
   use {
     'lewis6991/gitsigns.nvim',
@@ -95,7 +96,10 @@ return packer.startup(function()
   -- Fuzzy finder for quick file hunting
   use {
     'nvim-telescope/telescope.nvim',
-    requires =  {{'nvim-lua/plenary.nvim'}}
+    requires =  {{'nvim-lua/plenary.nvim'}, {'kdheepak/lazygit.nvim'}},
+    config = function()
+      require('telescope').load_extension('lazygit')
+    end,
   }
 
 

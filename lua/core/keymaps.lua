@@ -52,6 +52,8 @@ map('n','<C-f>',  ':Telescope current_buffer_fuzzy_find<CR>')
 map('n', '<leader>ff', ':Telescope find_files<CR>')
 map('n', '<leader>fh', ':Telescope oldfiles<CR>')
 map('n', '<leader>fc', ':Telescope colorscheme<CR>')
+-- Lazygit
+map('n', '<leader>gg', ':lua require("telescope").extensions.lazygit.lazygit()<CR>')
 
 -- Symbols tag-viewer
 map('n', '<C-m>', ':SymbolsOutline<CR>') -- open/close
