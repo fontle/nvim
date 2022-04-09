@@ -49,10 +49,8 @@ return packer.startup(function()
   use 'nvim-treesitter/nvim-treesitter'
 
   -- Color schemes
-  use 'navarasu/onedark.nvim'
-  use 'tanvirtin/monokai.nvim'
-  use { 'rose-pine/neovim', as = 'rose-pine' }
   use 'folke/tokyonight.nvim'
+  use 'rafi/awesome-vim-colorschemes'
   -- LSP
   use 'neovim/nvim-lspconfig'
 
@@ -101,6 +99,13 @@ return packer.startup(function()
       require('telescope').load_extension('lazygit')
     end,
   }
+
+  -- Debugger
+  use 'mfussenegger/nvim-dap'
+  use 'nvim-telescope/telescope-dap.nvim'
+  use 'mfussenegger/nvim-dap-python'
+  use 'rcarriga/nvim-dap-ui'
+  use 'theHamsta/nvim-dap-virtual-text'
 
 
 
