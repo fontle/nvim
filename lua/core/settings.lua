@@ -26,17 +26,18 @@ opt.completeopt = 'menuone,noselect'  -- Autocomplete options
 -----------------------------------------------------------
 -- Neovim UI
 -----------------------------------------------------------
+opt.cursorline = true
+opt.cursorcolumn = true
 opt.relativenumber = true                     -- Show line number
 opt.showmatch = true                  -- Highlight matching parenthesis
 opt.foldmethod = 'marker'             -- Enable folding (default 'foldmarker')
---opt.colorcolumn = '80'             -- Line lenght marker at 80 columns
+-- opt.colorcolumn = '100'             -- Line length marker at 80 columns
 opt.splitright = true                 -- Vertical split to the right
-opt.splitbelow = true                 -- Orizontal split to the bottom
-opt.ignorecase = true                 -- Ignore case letters when search
+opt.splitbelow = true                 -- Horizontal split to the bottom
 opt.smartcase = true                  -- Ignore lowercase for the whole pattern
 opt.linebreak = true                  -- Wrap on word boundary
 opt.termguicolors = true              -- Enable 24-bit RGB colors
-opt.pumheight = 10
+opt.pumheight = 10                    -- Limit the size of autocomplete window
 -----------------------------------------------------------
 -- Tabs, indent
 -----------------------------------------------------------
@@ -50,15 +51,17 @@ opt.smartindent = true                -- Autoindent new lines
 -----------------------------------------------------------
 opt.hidden = true                     -- Enable background buffers
 opt.history = 100                     -- Remember N lines in history
-opt.lazyredraw = true                 -- Faster scrolling
 opt.synmaxcol = 240                   -- Max column for syntax highlight
 
 -----------------------------------------------------------
 -- Autocommands
 -----------------------------------------------------------
 
-exec([[
+-- Set theme
+cmd [[colorscheme tokyonight]]
 
+-- Vimtex commands when compiling
+exec([[
   let g:vimtex_compiler_latexmk = {
       \ 'options' : [
       \    '-shell-escape',
@@ -68,7 +71,6 @@ exec([[
       \    '-interaction=nonstopmode',
       \ ],
       \}
-
 ]], false)
 
 -- Set cwd to open buffer
@@ -88,7 +90,7 @@ exec([[
 -- Don't auto commenting new lines
 cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
 
--- Remove line lenght marker for selected filetypes
+-- Remove line length marker for selected filetypes
 cmd [[autocmd FileType text,markdown,html,xhtml,javascript setlocal cc=0]]
 
 -- 2 spaces for selected filetypes
@@ -122,8 +124,6 @@ cmd [[command FormatJSON :%!python -m json.tool]]
 -----------------------------------------------------------
 -- Startup
 -----------------------------------------------------------
-
-cmd[[colorscheme onedark]]
 
 -- Disable nvim intro
 opt.shortmess:append "sI"

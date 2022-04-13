@@ -25,6 +25,9 @@ return packer.startup(function()
   -- Indent line
   use 'lukas-reineke/indent-blankline.nvim'
 
+  -- Vim-sneak for fast file navigation
+  use 'justinmk/vim-sneak'
+
   -- Autopair
   use {
     'windwp/nvim-autopairs',
@@ -44,6 +47,7 @@ return packer.startup(function()
 
   -- Change surrounding: '' "" () [] {}
   use 'tpope/vim-surround'
+  use 'tpope/vim-repeat'
 
   -- Treesitter interface
   use 'nvim-treesitter/nvim-treesitter'
@@ -54,8 +58,6 @@ return packer.startup(function()
   -- LSP
   use 'neovim/nvim-lspconfig'
 
-  -- Fast File navigation
-  use 'ggandor/lightspeed.nvim'
 
   -- Latex support
   use 'lervag/vimtex'
@@ -73,7 +75,7 @@ return packer.startup(function()
   }
   -- Statusline
   use {
-    'nvim-lualine/lualine.nvim',
+    'windwp/windline.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
   -- git labels

@@ -57,7 +57,6 @@ map('n', '<leader>fc', ':Telescope colorscheme<CR>')
 map('n', '<leader>gg', ':lua require("telescope").extensions.lazygit.lazygit()<CR>')
 
 -- Debugger
-map('n', '<leader>d', ':Telescope dap commands<CR>')
 map('n', '<leader>dc', '<cmd>lua require"dap".continue()<CR>')
 map('n', '<leader>dsv', '<cmd>lua require"dap".step_over()<CR>')
 map('n', '<leader>dsi', '<cmd>lua require"dap".step_into()<CR>')
