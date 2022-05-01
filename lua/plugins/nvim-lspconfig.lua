@@ -5,6 +5,12 @@
 -- Plugin: nvim-lspconfig
 -- url: https://github.com/neovim/nvim-lspconfig
 
+local tlrd = require 'trld'
+tlrd.setup{position = 'top'}
+vim.diagnostic.config({virtual_text = false})
+
+
+
 local nvim_lsp = require 'lspconfig'
 
 -- Add additional capabilities supported by nvim-cmp
@@ -109,3 +115,4 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
+

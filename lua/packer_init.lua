@@ -24,14 +24,17 @@ local packer = require 'packer'
 return packer.startup(function()
   use 'wbthomason/packer.nvim' -- packer can manage itself
 
+  -- Sneak / Easymotion style file navigation
+  use 'phaazon/hop.nvim'
+
   -- File explorer
   use 'kyazdani42/nvim-tree.lua'
 
   -- Indent line
   use 'lukas-reineke/indent-blankline.nvim'
 
-  -- Vim-sneak for fast file navigation
-  use 'justinmk/vim-sneak'
+  -- Transparent Effect
+  use 'xiyaowong/nvim-transparent'
 
   -- Autopair
   use {
@@ -60,8 +63,10 @@ return packer.startup(function()
   -- Color schemes
   use 'folke/tokyonight.nvim'
   use 'rafi/awesome-vim-colorschemes'
+
   -- LSP
   use 'neovim/nvim-lspconfig'
+  use 'Mofiqul/trld.nvim' -- Display lsp diagnostics top right
 
 
   -- Latex support

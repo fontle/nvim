@@ -22,3 +22,5 @@ require('plugins/nvim-dap')
 require('plugins/alpha-nvim')
 require('plugins/telescope')
 require('plugins/windline')
+require('plugins/hop')
+

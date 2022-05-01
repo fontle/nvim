@@ -11,4 +11,4 @@ require('dapui').setup()
 require("nvim-dap-virtual-text").setup()
 vim.g.virtual_tex = true
 -- Change python path accordingly
-require('dap-python').setup('C:/Users/Isaac/anaconda3/python')
+require('dap-python').setup('/usr/bin/python')

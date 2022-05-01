@@ -26,9 +26,10 @@ opt.completeopt = 'menuone,noselect'  -- Autocomplete options
 -----------------------------------------------------------
 -- Neovim UI
 -----------------------------------------------------------
-opt.cursorline = true
-opt.cursorcolumn = true
-opt.relativenumber = true                     -- Show line number
+-- opt.cursorline = true
+-- opt.cursorcolumn = true
+opt.laststatus = 3                    -- Global statusline
+opt.relativenumber = true             -- Show line number
 opt.showmatch = true                  -- Highlight matching parenthesis
 opt.foldmethod = 'marker'             -- Enable folding (default 'foldmarker')
 -- opt.colorcolumn = '100'             -- Line length marker at 80 columns
@@ -57,6 +58,8 @@ opt.synmaxcol = 240                   -- Max column for syntax highlight
 -- Autocommands
 -----------------------------------------------------------
 
+-- Resize Terminal on startup
+cmd [[autocmd VimEnter * :silent exec"!kill -s SIGWINCH $PPID"]]
 -- Set theme
 cmd [[colorscheme tokyonight]]
 
@@ -108,7 +111,7 @@ cmd [[
 
 -- Open a terminal pane on the right using :Term
 -- set to 'term://cmd' if windows instead of $SHELL
-cmd [[command Term :botright vsplit term://cmd]]
+cmd [[command Term :botright vsplit term://$SHELL]]
 
 -- Terminal visual tweaks:
 --- enter insert mode when switching to terminal
@@ -119,7 +122,11 @@ cmd [[
     autocmd BufLeave term://* stopinsert
 ]]
 
+-- Format Json files command alias
 cmd [[command FormatJSON :%!python -m json.tool]]
+
+-- Toggle current cursor position command alias
+cmd [[command CursorPositionToggle :set cursorline! | set cursorcolumn!]]
 
 -----------------------------------------------------------
 -- Startup

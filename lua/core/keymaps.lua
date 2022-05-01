@@ -59,8 +59,8 @@ map('n', '<leader>gg', ':lua require("telescope").extensions.lazygit.lazygit()<C
 -- Debugger
 map('n', '<leader>dc', '<cmd>lua require"dap".continue()<CR>')
 map('n', '<leader>dsv', '<cmd>lua require"dap".step_over()<CR>')
-map('n', '<leader>dsi', '<cmd>lua require"dap".step_into()<CR>')
-map('n', '<leader>dso', '<cmd>lua require"dap".step_out()<CR>')
+map('n', '<leader>di', '<cmd>lua require"dap".step_into()<CR>')
+map('n', '<leader>do', '<cmd>lua require"dap".step_out()<CR>')
 map('n', '<leader>db', '<cmd>lua require"dap".toggle_breakpoint()<CR>')
 
 map('n', '<leader>ds', '<cmd>lua require"dap.ui.variables".scopes()<CR>')
@@ -84,3 +84,14 @@ map('n', '<leader>df',  '<cmd>lua require"telescope".extensions.dap.frames{}<CR>
 
 -- nvim dap ui
 map('n', '<leader>dui', '<cmd>lua require"dapui".toggle()<CR>')
+
+
+-- Hop
+map('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
+map('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
+map('o', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", {})
+map('o', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", {})
+map('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
+map('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
+
+
